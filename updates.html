@@ -50,7 +50,17 @@
 
       <div class="timeline">
         <div class="release">
-          <span class="ver">v26.5.31</span><span class="date">Latest</span>
+          <span class="ver">v26.5.31</span><span class="date">Latest · Jun 1, 2026</span>
+          <ul>
+            <li><strong>Packaging:</strong> npm package ships <code>dist/</code> again (with a self-healing prepack hook) and fixed ESM binary resolution — restores <code>require('vibium')</code> and TS type imports.</li>
+            <li><strong>Core fixes:</strong> resolved textarea fill/element crashes, <code>select</code> now errors on non-matching options, and clock methods error when not initialized.</li>
+            <li><strong>MCP server:</strong> fixed empty/null result handling, cookie parsing, and screenshot annotation.</li>
+            <li><strong>CLI:</strong> removed Node stack traces from error output and corrected error categorization.</li>
+            <li><strong>Clients:</strong> added Python <code>page.eval()</code> alias, expanded Java client commands, and raised Python's pipe message limit.</li>
+          </ul>
+        </div>
+        <div class="release">
+          <span class="ver">Core capabilities</span>
           <ul>
             <li>Single ~10&nbsp;MB binary with automatic browser download.</li>
             <li>Built-in MCP server as a first-class interface.</li>
