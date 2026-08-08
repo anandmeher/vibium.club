@@ -39,8 +39,8 @@
 
       <div class="grid grid-3" style="margin-bottom:48px">
         <div class="card" style="text-align:center"><h3 class="gradient-text" style="font-size:1.6rem">v26.5.31</h3><p>Latest release at time of writing</p></div>
-        <div class="card" style="text-align:center"><h3 class="gradient-text" style="font-size:1.6rem">11+</h3><p>Releases shipped</p></div>
-        <div class="card" style="text-align:center"><h3 class="gradient-text" style="font-size:1.6rem">2.8k★</h3><p>GitHub stars and growing</p></div>
+        <div class="card" style="text-align:center"><h3 class="gradient-text" style="font-size:1.6rem">11</h3><p>Releases shipped</p></div>
+        <div class="card" style="text-align:center"><h3 class="gradient-text" style="font-size:1.6rem">2.9k★</h3><p>GitHub stars and growing</p></div>
       </div>
 
       <div class="section-head" style="text-align:left">
@@ -50,7 +50,17 @@
 
       <div class="timeline">
         <div class="release">
-          <span class="ver">v26.5.31</span><span class="date">Latest · Jun 1, 2026</span>
+          <span class="ver">On <code>main</code></span><span class="date">Unreleased · as of Aug 8, 2026</span>
+          <ul>
+            <li><strong>Firefox support</strong> plus native BiDi screen recording landed on the main branch.</li>
+            <li><strong>Video as a recording track:</strong> in-progress spec work to carry video inside <code>record.zip</code>.</li>
+            <li><strong>vibium play:</strong> a proposed local viewer for records and screencast videos.</li>
+            <li><strong>Browser control:</strong> custom Chrome flags via <code>VIBIUM_CHROME_ARGS</code>, and a clear message instead of a crash when Chrome will not start as root.</li>
+          </ul>
+          <p style="color:var(--text-faint);font-size:.88rem;margin:10px 0 0">Merged but not yet in a tagged release — build from source to try these.</p>
+        </div>
+        <div class="release">
+          <span class="ver">v26.5.31</span><span class="date">Latest release · Jun 1, 2026</span>
           <ul>
             <li><strong>Packaging:</strong> npm package ships <code>dist/</code> again (with a self-healing prepack hook) and fixed ESM binary resolution — restores <code>require('vibium')</code> and TS type imports.</li>
             <li><strong>Core fixes:</strong> resolved textarea fill/element crashes, <code>select</code> now errors on non-matching options, and clock methods error when not initialized.</li>
@@ -97,7 +107,7 @@
       </div>
       <div class="grid grid-2">
         <div class="card"><span class="icon">🧠</span><h3>Memory layers</h3><p>Persistent context so agents can remember pages and flows across a session.</p></div>
-        <div class="card"><span class="icon">🎥</span><h3>Video recording</h3><p>Record full automation sessions as video evidence, beyond screenshots and PDFs.</p></div>
+        <div class="card"><span class="icon">🎥</span><h3>Video recording <span style="color:var(--text-faint);font-size:.72rem;font-weight:600;letter-spacing:.04em">IN PROGRESS</span></h3><p>Record full automation sessions as video evidence, beyond screenshots and PDFs. Native BiDi screen recording is already on <code>main</code>.</p></div>
         <div class="card"><span class="icon">🔁</span><h3>Sense → Think → Act</h3><p>A robotics-inspired control loop guiding the broader architecture.</p></div>
         <div class="card"><span class="icon">🩹</span><h3>Self-healing locators</h3><p>AI-assisted recovery when selectors drift or break.</p></div>
       </div>
@@ -146,5 +156,7 @@
   </footer>
 
   <script src="assets/main.js"></script>
+  <!-- Vercel Web Analytics — cookieless pageview stats, visible only in the Vercel dashboard -->
+  <script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>
