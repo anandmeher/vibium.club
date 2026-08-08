@@ -55,6 +55,22 @@ Drop the folder onto any static host — **Vercel**, GitHub Pages, Netlify, Clou
 vercel deploy
 ```
 
+## Analytics
+
+Each page loads Vercel Web Analytics via a single tag before `</body>`:
+
+```html
+<script defer src="/_vercel/insights/script.js"></script>
+```
+
+It is cookieless and collects no personal data, so no consent banner is required.
+Enable it once in the Vercel dashboard (**Project → Analytics → Enable**) — until then the
+script returns 404 and nothing is recorded. The 404 is also expected when running locally,
+since the `/_vercel/*` route only exists on Vercel; it is harmless.
+
+Stats are private to the project's Vercel dashboard — nothing is displayed on the site.
+If you add a page, copy the tag into it too.
+
 ## Updating content
 
 - **Videos** — edit the `<iframe>` embeds and metadata in `videos.html`.
