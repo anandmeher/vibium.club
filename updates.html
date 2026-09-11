@@ -38,8 +38,8 @@
     <div class="container" style="max-width:820px">
 
       <div class="grid grid-3" style="margin-bottom:48px">
-        <div class="card" style="text-align:center"><h3 class="gradient-text" style="font-size:1.6rem">v26.5.31</h3><p>Latest release at time of writing</p></div>
-        <div class="card" style="text-align:center"><h3 class="gradient-text" style="font-size:1.6rem">11</h3><p>Releases shipped</p></div>
+        <div class="card" style="text-align:center"><h3 class="gradient-text" style="font-size:1.6rem">v26.8.21</h3><p>Latest release at time of writing</p></div>
+        <div class="card" style="text-align:center"><h3 class="gradient-text" style="font-size:1.6rem">12</h3><p>Releases shipped</p></div>
         <div class="card" style="text-align:center"><h3 class="gradient-text" style="font-size:1.6rem">2.9k★</h3><p>GitHub stars and growing</p></div>
       </div>
 
@@ -50,29 +50,32 @@
 
       <div class="timeline">
         <div class="release">
-          <span class="ver">On <code>main</code></span><span class="date">Unreleased · as of Aug 8, 2026</span>
+          <span class="ver">On <code>main</code></span><span class="date">Unreleased · as of Sep 11, 2026</span>
           <ul>
-            <li><strong>Firefox support</strong> plus native BiDi screen recording landed on the main branch.</li>
-            <li><strong>Video as a recording track:</strong> in-progress spec work to carry video inside <code>record.zip</code>.</li>
-            <li><strong>vibium play:</strong> a proposed local viewer for records and screencast videos.</li>
-            <li><strong>Browser control:</strong> custom Chrome flags via <code>VIBIUM_CHROME_ARGS</code>, and a clear message instead of a crash when Chrome will not start as root.</li>
+            <li><strong>Verify:</strong> an AI-backed runtime that checks whether an agent's run actually did what it claimed — <code>Run</code> and <code>Check</code> workflows, shared AI providers, readiness diagnostics, and recorder redaction, exposed across the SDKs.</li>
+            <li><strong>Classic WebDriver connect:</strong> <code>POST /session</code> plus <code>webSocketUrl</code> brings cloud grids onto the standard connect path — Sauce Labs, BrowserStack, Kernel, TestingBot and LambdaTest (TestMu) guides, each live-verified.</li>
+            <li><strong>Exposed functions:</strong> pages can call back into the JS, Python and Java clients.</li>
+            <li><strong>Agent isolated pages:</strong> agents can open pages with their own cookies and storage instead of sharing one current tab.</li>
+            <li><strong>Self-hosted / cloud-hosted deploy kits:</strong> browser-box recipes for AWS, Hetzner, GCP and Fly.io.</li>
           </ul>
           <p style="color:var(--text-faint);font-size:.88rem;margin:10px 0 0">Merged but not yet in a tagged release — build from source to try these.</p>
         </div>
         <div class="release">
-          <span class="ver">v26.5.31</span><span class="date">Latest release · Jun 1, 2026</span>
+          <span class="ver">v26.8.21</span><span class="date">Latest release · Aug 22, 2026</span>
           <ul>
-            <li><strong>Packaging:</strong> npm package ships <code>dist/</code> again (with a self-healing prepack hook) and fixed ESM binary resolution — restores <code>require('vibium')</code> and TS type imports.</li>
-            <li><strong>Core fixes:</strong> resolved textarea fill/element crashes, <code>select</code> now errors on non-matching options, and clock methods error when not initialized.</li>
-            <li><strong>MCP server:</strong> fixed empty/null result handling, cookie parsing, and screenshot annotation.</li>
-            <li><strong>CLI:</strong> removed Node stack traces from error output and corrected error categorization.</li>
-            <li><strong>Clients:</strong> added Python <code>page.eval()</code> alias, expanded Java client commands, and raised Python's pipe message limit.</li>
+            <li><strong>Firefox support:</strong> <code>--engine firefox</code> drives Firefox end to end, auto-installed and checksum-verified alongside Chrome, with full network, dialog, console and navigation event coverage.</li>
+            <li><strong>Video recording:</strong> <code>recording.start</code> gains a video track on every surface, captured natively over BiDi screencast — one <code>record.zip</code> now carries screenshots, snapshots and the WebM together.</li>
+            <li><strong>Java client parity:</strong> one-shot capture APIs, WebSocket monitoring, request post data, screencast, and exceptions that carry caller frames.</li>
+            <li><strong>Concurrency:</strong> named CLI sessions (<code>--session</code>) stop scripts colliding on shared hosts, the pipe transport no longer wedges on a stalled reader, and the CLI recovers when the browser crashes externally.</li>
+            <li><strong>Browser control:</strong> custom Chrome flags via <code>VIBIUM_CHROME_ARGS</code>, and a clear message instead of a crash when Chrome will not start as root.</li>
+            <li><strong>Packaging:</strong> downloaded browsers are checksum-verified, and nightly prereleases now publish automatically from the newest CI-green commit on <code>main</code>.</li>
           </ul>
         </div>
         <div class="release">
           <span class="ver">Core capabilities</span>
           <ul>
             <li>Single ~10&nbsp;MB binary with automatic browser download.</li>
+            <li>Chrome and Firefox as first-class engines, with native video recording over BiDi screencast.</li>
             <li>Built-in MCP server as a first-class interface.</li>
             <li>Semantic element finding by text, label, placeholder and ARIA role.</li>
             <li>Actionability system to prevent "element not interactable" errors.</li>
@@ -105,13 +108,14 @@
         <span class="eyebrow">Roadmap</span>
         <h2 style="font-size:1.8rem">On the horizon</h2>
       </div>
-      <div class="grid grid-2">
-        <div class="card"><span class="icon">🧠</span><h3>Memory layers</h3><p>Persistent context so agents can remember pages and flows across a session.</p></div>
-        <div class="card"><span class="icon">🎥</span><h3>Video recording <span style="color:var(--text-faint);font-size:.72rem;font-weight:600;letter-spacing:.04em">IN PROGRESS</span></h3><p>Record full automation sessions as video evidence, beyond screenshots and PDFs. Native BiDi screen recording is already on <code>main</code>.</p></div>
-        <div class="card"><span class="icon">🔁</span><h3>Sense → Think → Act</h3><p>A robotics-inspired control loop guiding the broader architecture.</p></div>
-        <div class="card"><span class="icon">🩹</span><h3>Self-healing locators</h3><p>AI-assisted recovery when selectors drift or break.</p></div>
+      <div class="grid grid-3">
+        <div class="card"><span class="icon">🗂️</span><h3>Records</h3><p>Help agents remember pages and paths between sessions, with an early UI prototype to browse and edit that memory.</p></div>
+        <div class="card"><span class="icon">🎯</span><h3>Find an element by description</h3><p>Ask for an element in plain language — <code>vibe.find("the blue submit button")</code> — and get one back.</p></div>
+        <div class="card"><span class="icon">🌐</span><h3>More browsers</h3><p>Edge and Safari support, plus video recording in more browsers as their protocol support allows.</p></div>
+        <div class="card"><span class="icon">☁️</span><h3>Easier CI and cloud setup</h3><p>Container images and recipes for CI, then hosted Run and Check, cloud browsers for those operations, and PR integration.</p></div>
+        <div class="card"><span class="icon">🔷</span><h3>A .NET client</h3><p>Official C# support, building on an existing community implementation.</p></div>
       </div>
-      <p style="text-align:center;color:var(--text-faint);font-size:.9rem;margin-top:18px">See the official <a href="https://github.com/VibiumDev/vibium/blob/main/ROADMAP.md" target="_blank" rel="noopener">ROADMAP.md</a> and <a href="https://github.com/VibiumDev/vibium/blob/main/V2-ROADMAP.md" target="_blank" rel="noopener">V2-ROADMAP.md</a> for details.</p>
+      <p style="text-align:center;color:var(--text-faint);font-size:.9rem;margin-top:18px">See the official <a href="https://github.com/VibiumDev/vibium/blob/main/ROADMAP.md" target="_blank" rel="noopener">ROADMAP.md</a> for details.</p>
 
       <div class="section-head" style="text-align:left;margin-top:56px">
         <span class="eyebrow">Stay current</span>
