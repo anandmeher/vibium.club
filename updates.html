@@ -50,13 +50,16 @@
 
       <div class="timeline">
         <div class="release">
-          <span class="ver">On <code>main</code></span><span class="date">Unreleased · as of Sep 11, 2026</span>
+          <span class="ver">On <code>main</code></span><span class="date">Unreleased · as of Sep 24, 2026</span>
           <ul>
             <li><strong>Verify:</strong> an AI-backed runtime that checks whether an agent's run actually did what it claimed — <code>Run</code> and <code>Check</code> workflows, shared AI providers, readiness diagnostics, and recorder redaction, exposed across the SDKs.</li>
             <li><strong>Classic WebDriver connect:</strong> <code>POST /session</code> plus <code>webSocketUrl</code> brings cloud grids onto the standard connect path — Sauce Labs, BrowserStack, Kernel, TestingBot and LambdaTest (TestMu) guides, each live-verified.</li>
             <li><strong>Exposed functions:</strong> pages can call back into the JS, Python and Java clients.</li>
             <li><strong>Agent isolated pages:</strong> agents can open pages with their own cookies and storage instead of sharing one current tab.</li>
             <li><strong>Self-hosted / cloud-hosted deploy kits:</strong> browser-box recipes for AWS, Hetzner, GCP and Fly.io.</li>
+            <li><strong><code>vibium setup</code>:</strong> an interactive wizard that picks an AI provider and model, stores keys in <code>ai.env</code> (skipped if world-readable), installs agent skills for the agents it detects, and ends by suggesting a first command.</li>
+            <li><strong>More AI providers for Verify:</strong> native xAI (reusing a signed-in Grok CLI session), <code>GEMINI_API_KEY</code> for Google, and recordings that redact Anthropic and Google keys.</li>
+            <li><strong>Flag rename:</strong> the AI endpoint flag is now <code>--ai-base-url</code>; on <code>run</code> and <code>check</code>, <code>--base-url</code> names the site under test.</li>
           </ul>
           <p style="color:var(--text-faint);font-size:.88rem;margin:10px 0 0">Merged but not yet in a tagged release — build from source to try these.</p>
         </div>
